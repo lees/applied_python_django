@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<h2>{{ topic.subject }}</h2>
+
+<div class="well">
+	{{ topic.text }}
+</div>
+
+{% for comment in topic.comment_set.all %}
+<p>
+	{{ comment.author_nick }}: {{ comment.text }}
+	{% if comment.reply_to %}
+		<b>| Reply to {{ comment.reply_to.author_nick }}</b>
+	{% endif %}
+</p>
+{% endfor %}
+
+{% endblock %}

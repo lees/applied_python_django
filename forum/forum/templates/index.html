@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<h2>Список тем</h2>
+
+<ul>
+	{% for topic in topics %}
+		<li><a href="/topic/{{ topic.pk }}">{{ topic.subject }}</a></li>	
+	{% endfor %}
+</ul>
+
+{% endblock %}
