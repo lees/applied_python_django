@@ -19,7 +19,8 @@ from django.urls import path
 from forum import views
 
 urlpatterns = [
-	path('', views.index),
-	path('topic/<int:pk>/', views.TopicView.as_view()),
+    path('', views.index),
+    path('topic/<int:topic_pk>/add_comment', views.CommentAdd.as_view()),
+    path('topic/<int:pk>/', views.TopicView.as_view()),
     path('admin/', admin.site.urls),
 ]
